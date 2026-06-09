@@ -17,4 +17,18 @@ db.exec(`
   )
 `);
 
+db.exec(`
+  CREATE TABLE IF NOT EXISTS expenses (
+    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    title       TEXT    NOT NULL,
+    amount      REAL    NOT NULL CHECK(amount > 0),
+    category    TEXT    NOT NULL
+                        CHECK(category IN ('food','transport','housing','entertainment','health','other')),
+    date        TEXT    NOT NULL,
+    notes       TEXT    NOT NULL DEFAULT '',
+    created_at  TEXT    NOT NULL DEFAULT (datetime('now')),
+    updated_at  TEXT    NOT NULL DEFAULT (datetime('now'))
+  )
+`);
+
 export default db;

@@ -8,10 +8,10 @@
     "dev:client": "npm run dev --workspace=client",
     "build:server": "npm run build --workspace=server",
     "build:client": "npm run build --workspace=client",
-    "test": "playwright test",
-    "test:api": "playwright test --project=api",
-    "test:e2e": "playwright test --project=chromium",
-    "test:report": "playwright show-report"
+    "test": "./node_modules/.bin/playwright test",
+    "test:api": "./node_modules/.bin/playwright test --project=api",
+    "test:e2e": "./node_modules/.bin/playwright test --project=chromium",
+    "test:report": "./node_modules/.bin/playwright show-report"
   },
   "devDependencies": {
     "@playwright/test": "^1.42.1",
