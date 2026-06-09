@@ -152,4 +152,4 @@ test-results/
 # Build output
 server/dist/
 client/dist/
-# /.idea/
+/.idea/
